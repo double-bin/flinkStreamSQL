@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-package com.dtstack.flink.sql.launcher;
+package java.com.dtstack.flink.sql.launcher;
 
+
+import com.dtstack.flink.sql.launcher.LauncherMain;
 
 /**
  *   yarnPer提交任务时指定pluginLoadMode
