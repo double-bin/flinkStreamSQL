@@ -63,6 +63,22 @@ public class PluginLoadModeTest {
         LauncherMain.main(sql);
     }
 
+    public static void testLbbSql() throws Exception{
+        String[] sql = new String[]{"-mode", "local",
+                "-sql", "/Users/roc/Documents/flink_sql/sql/simpleInsert.sql",
+                "-name", "doublebin",
+                "-localSqlPluginPath", "/Users/doublebin/work/private/flinkStreamSQL/plugins",
+                "-remoteSqlPluginPath", "/Users/doublebin/work/private/flinkStreamSQL/plugins",
+                "-flinkconf", "/Users/doublebin/software/flink/flink-1.11.3/conf",
+                "-confProp", "{\"sql.checkpoint.cleanup.mode\":\"false\",\"sql.checkpoint.interval\":10000,\"time.characteristic\":\"EventTime\"}",
+                "-yarnconf", "/Users/doublebin/software/flink/hadoop-conf",
+                "-flinkJarPath", "/Users/doublebin/software/flink/flink-1.11.3/lib",
+                "-queue", "c",
+                "-pluginLoadMode", "classpath"};
+        System.setProperty("HADOOP_USER_NAME", "admin");
+        LauncherMain.main(sql);
+    }
+
     public static void main(String[] args) throws Exception {
         testRocSql();
 //        testShipfileMode();
