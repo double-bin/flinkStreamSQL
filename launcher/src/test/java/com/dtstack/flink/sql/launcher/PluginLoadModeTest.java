@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package java.com.dtstack.flink.sql.launcher;
+package com.dtstack.flink.sql.launcher;
 
 
 import com.dtstack.flink.sql.launcher.LauncherMain;
