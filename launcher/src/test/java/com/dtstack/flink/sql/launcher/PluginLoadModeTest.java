@@ -65,7 +65,7 @@ public class PluginLoadModeTest {
 
     public static void testLbbSql() throws Exception{
         String[] sql = new String[]{"-mode", "local",
-                "-sql", "/Users/roc/Documents/flink_sql/sql/simpleInsert.sql",
+                "-sql", "/Users/doublebin/work/projects/private/flinkStreamSQL/launcher/src/test/resources/sql/simpleTask1.sql",
                 "-name", "doublebin",
                 "-localSqlPluginPath", "/Users/doublebin/work/private/flinkStreamSQL/plugins",
                 "-remoteSqlPluginPath", "/Users/doublebin/work/private/flinkStreamSQL/plugins",
