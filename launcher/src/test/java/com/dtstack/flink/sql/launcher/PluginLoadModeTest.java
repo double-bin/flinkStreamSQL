@@ -20,6 +20,7 @@ package com.dtstack.flink.sql.launcher;
 
 
 import com.dtstack.flink.sql.launcher.LauncherMain;
+import org.junit.Test;
 
 /**
  *   yarnPer提交任务时指定pluginLoadMode
@@ -63,19 +64,20 @@ public class PluginLoadModeTest {
         LauncherMain.main(sql);
     }
 
-    public static void testLbbSql() throws Exception{
+    @Test
+    public void testLbbSql() throws Exception{
         String[] sql = new String[]{"-mode", "local",
                 "-sql", "/Users/doublebin/work/projects/private/flinkStreamSQL/launcher/src/test/resources/sql/simpleTask1.sql",
                 "-name", "doublebin",
-                "-localSqlPluginPath", "/Users/doublebin/work/private/flinkStreamSQL/plugins",
-                "-remoteSqlPluginPath", "/Users/doublebin/work/private/flinkStreamSQL/plugins",
+                "-localSqlPluginPath", "/Users/doublebin/work/projects/private/flinkStreamSQL/sqlplugins",
+                "-remoteSqlPluginPath", "/Users/doublebin/work/projects/private/flinkStreamSQL/sqlplugins",
                 "-flinkconf", "/Users/doublebin/software/flink/flink-1.11.3/conf",
                 "-confProp", "{\"sql.checkpoint.cleanup.mode\":\"false\",\"sql.checkpoint.interval\":10000,\"time.characteristic\":\"EventTime\"}",
                 "-yarnconf", "/Users/doublebin/software/flink/hadoop-conf",
                 "-flinkJarPath", "/Users/doublebin/software/flink/flink-1.11.3/lib",
                 "-queue", "c",
                 "-pluginLoadMode", "classpath"};
-        System.setProperty("HADOOP_USER_NAME", "admin");
+        System.setProperty("HADOOP_USER_NAME", "hadoop");
         LauncherMain.main(sql);
     }
 

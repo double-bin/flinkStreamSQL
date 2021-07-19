@@ -29,6 +29,6 @@ into
     MyResult
     select
         message,
-        offset
+        `offset`
     from
         MyTable
